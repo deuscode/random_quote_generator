@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Random Technology Quotes">
+        <meta name="keywords" content="Quotes,Technology,Generator">
+        <meta name="author" content="Peter Kay">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <title>Quote Generator</title>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>   
+
+    </head>
+    <!-- START BODY -->
+  <body class="nomobile">
+
+    <!-- START HEADER -->
+    <section id="header">
+        <div class="container">
+            <header>
+                <!-- HEADLINE -->
+                <h1 data-animated="GoIn"><b>BEST</b> technology quotes...</h1>
+            </header>
+            <div id="timer" data-animated="FadeIn">
+                
+                <div id="hours" class="timer_box"></div>
+                <div id="min" class="timer_box"></div>
+                <div id="sec" class="timer_box"></div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-4 mt centered">
+            	<h4>CLICK HERE FOR A NEW QUOTE</h4>
+                <button onclick="newQuote()" class="btn btn-info">New Quote</button>
+                <h4>QUOTE:</h4>
+                <div id="quoteDisplay"></div>
+				             
+			</div>
+            
+        </div>
+        <!-- LAYER OVER THE SLIDER TO MAKE THE WHITE TEXTE READABLE -->
+        <div id="layer"></div>
+        <!-- END LAYER -->
+        <!-- START SLIDER -->
+        <div id="slider" class="rev_slider">
+            <ul>
+              <li data-transition="slideleft" data-slotamount="1" data-thumb="img/slider/1.jpg">
+                <img src="img/slider/1.jpg">
+              </li>
+              <li data-transition="slideleft" data-slotamount="1" data-thumb="img/slider/2.jpg">
+                <img src="img/slider/2.jpg">
+              </li>
+              <li data-transition="slideleft" data-slotamount="1" data-thumb="img/slider/3.jpg">
+                <img src="img/slider/3.jpg">
+              </li>
+              <li data-transition="slideleft" data-slotamount="1" data-thumb="img/slider/4.jpg">
+                <img src="img/slider/4.jpg">
+              </li>
+            </ul>
+        </div>
+        <!-- END SLIDER -->
+    </section>
+    <!-- END HEADER -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/clock/plugins.js"></script>
+    <script src="js/clock/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/clock/custom.js"></script>
+    <script src="js/javascript.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  </body>
+  <!-- END BODY -->
+</html>
