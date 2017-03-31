@@ -1,7 +1,14 @@
 function newQuote() {
-    var randomNumber = Math.floor(Math.random() * (quotesArray.length));
-    document.getElementById('quoteDisplay').innerHTML = quotesArray[randomNumber];
+    var randomQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)];
+    $('#quoteDisplay').html(randomQuote);
+	$('#tweetQuote').attr('href', 'https://twitter.com/intent/tweet?text='+randomQuote);
 }
+
+$(function() {
+	$('#randomquote').click(function() {
+		newQuote();
+	});
+});
 var quotesArray = [
     'The most technologically efficient machine that man has ever invented is the book. <br />- Northrop Frye',
     'Just because something doesn’t do what you planned it to do doesn’t mean it’s useless. <br />- Thomas Edison',
@@ -54,3 +61,5 @@ var quotesArray = [
     'Please, no matter how we advance technologically, please don’t abandon the book. There is nothing in our material world more beautiful than the book. <br />- Patti Smith',
     'Technology is teaching us to be human again. <br />- Simon Mainwaring'
 ];
+
+
