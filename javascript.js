@@ -18,21 +18,39 @@ $(document).ready(function() {
                 author = response.quoteAuthor;
                 $('#quote').text(quote);
                 if (author) {
-                    $('#author').text('said by ' + author);
+                    $('#author').text(author);
                 } else {
-                    $('#author').text('- unknown');
+                    $('#author').text('Unknown');
                 }
             }
         });
     }
     getNewQuote();
     $('.get-quote').on('click', function(event) {
+        $('#quotebutton').addClass('animated wobble');
+            $('#quotebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('#quotebutton').removeClass('animated wobble');
+            });
+        $('#quote').addClass('animated flipInX');
+            $('#quote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('#quote').removeClass('animated flipInX');
+            });
+        $('#author').addClass('animated flipInX');
+            $('#author').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('#author').removeClass('animated flipInX');
+            });
         event.preventDefault();
         getNewQuote();
     });
 
     $('.share-quote').on('click', function(event) {
+        $('#sharebutton').addClass('animated jello');
+            $('#sharebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('#sharebutton').removeClass('animated jello');
+            });
         event.preventDefault();
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote + '--' + author), "MsgWindow", "width=500, height=500");
     });
+
+    
 });
