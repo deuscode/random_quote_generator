@@ -27,9 +27,9 @@ $(document).ready(function() {
     }
     getNewQuote();
     $('.get-quote').on('click', function(event) {
-        $('#quotebutton').addClass('animated wobble');
+        $('#quotebutton').addClass('animated flash');
             $('#quotebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#quotebutton').removeClass('animated wobble');
+                $('#quotebutton').removeClass('animated flash');
             });
         $('#quote').addClass('animated flipInX');
             $('#quote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -44,9 +44,9 @@ $(document).ready(function() {
     });
 
     $('.share-quote').on('click', function(event) {
-        $('#sharebutton').addClass('animated jello');
+        $('#sharebutton').addClass('animated flash');
             $('#sharebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#sharebutton').removeClass('animated jello');
+                $('#sharebutton').removeClass('animated flash');
             });
         event.preventDefault();
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote + '--' + author), "MsgWindow", "width=500, height=500");
