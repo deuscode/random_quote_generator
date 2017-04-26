@@ -1,56 +1,62 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    // global variable for the quote
+    var myquote; 
+    // global variable for the author
+    var myauthor; 
 
-    var quote;
-    var author;
-
+    // function to call API in JSON format
     function getNewQuote() {
-        $.ajax({
-            url: 'http://api.forismatic.com/api/1.0/',
-            jsonp: 'jsonp',
-            dataType: 'jsonp',
-            data: {
-                method: 'getQuote',
-                lang: 'en',
-                format: 'jsonp'
-            },
-            success: function(response) {
-                quote = response.quoteText;
-                author = response.quoteAuthor;
-                $('#quote').text(quote);
-                if (author) {
-                    $('#author').text(author);
+        // ajax request
+        $.ajax({ 
+            url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=famous',
+            type: 'POST',
+            data: {},
+            dataType: 'json',
+            success: function (data) {
+                myquote = data.quote;
+                myauthor = data.author;
+                $('#quote').text(myquote);
+                if (myauthor) {
+                    $('#author').text(myauthor);
                 } else {
                     $('#author').text('Unknown');
                 }
+            },
+            // API KEY
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-Mashape-Authorization", /** "PLACE API KEY HERE" **/);
             }
         });
     }
-    getNewQuote();
-    $('.get-quote').on('click', function(event) {
+    // Initial function call
+    getNewQuote()
+
+    // Get new quote + animation events for quote button
+    $('.get-quote').on('click', function (event) {
         $('#quotebutton').addClass('animated flash');
-            $('#quotebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#quotebutton').removeClass('animated flash');
-            });
+        $('#quotebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#quotebutton').removeClass('animated flash');
+        });
         $('#quote').addClass('animated flipInX');
-            $('#quote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#quote').removeClass('animated flipInX');
-            });
+        $('#quote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#quote').removeClass('animated flipInX');
+        });
         $('#author').addClass('animated flipInX');
-            $('#author').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#author').removeClass('animated flipInX');
-            });
+        $('#author').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#author').removeClass('animated flipInX');
+        });
         event.preventDefault();
         getNewQuote();
     });
 
-    $('.share-quote').on('click', function(event) {
+    // Share quote + animation event for twitter button
+    $('.share-quote').on('click', function (event) {
         $('#sharebutton').addClass('animated flash');
-            $('#sharebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('#sharebutton').removeClass('animated flash');
-            });
+        $('#sharebutton').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#sharebutton').removeClass('animated flash');
+        });
         event.preventDefault();
-        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(quote + '--' + author), "MsgWindow", "width=500, height=500");
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(myquote + ' - ' + myauthor), "MsgWindow", "width=500, height=500");
     });
 
-    
 });

@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
 
-    <!-- CSS Files -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Font Awesome CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- My CSS Files -->
-    <link rel="stylesheet" href="style.css">
-    <!-- CSS Animate file -->
-    <link rel="stylesheet" href="css/animate.css">
-  </head>
-  <body>
-    <div class="container animated fadeIn">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 id="titleanimated" class="animated fadeInDown">Random Quote Generator</h1>
-          <h3 id="subtitleanimated" class="animated slideInUp">Quotes that inspire!</h3>
-          <hr class="animated fadeInUp">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="quotebox animated flipInX">
-            <p id="quote"></p>
-            <p id="author"></p>
-          </div>
-          <ul class="list-inline">
-            <li><a href="#" id="quotebutton" class="btn btn-default btn-lg get-quote"><i class="fa fa-quote-left fa-fw"></i>Get Quote</a></li>
-            <li><a href="#" id="sharebutton" class="btn btn-default btn-lg share-quote"><i class="fa fa-twitter fa-fw"></i>Share Quote</a></li>
-          </ul>
-          <h6>- built by <a href="https://github.com/deuscode" target="_blank">peter kay</a></h6>
-          <h6>quote API by <a href="http://forismatic.com/en/api/" target="_blank">forismatic.com</a></h6>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+
+  <!-- CSS Files -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- Font Awesome CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <!-- My CSS Files -->
+  <link rel="stylesheet" href="style.css">
+  <!-- CSS Animate file -->
+  <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+  <div class="container animated fadeIn">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 id="titleanimated" class="animated fadeInDown">Random Quote Generator</h1>
+        <h3 id="subtitleanimated" class="animated slideInUp">Quotes that inspire!</h3>
+        <hr class="animated fadeInUp">
       </div>
     </div>
-    <!-- JQuery 3.x CDN -->
-    <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-    <!-- My Javascript -->
-    <script src="javascript.js"></script>
-  </body>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="quotebox animated flipInX">
+          <p id="quote"></p>
+          <p id="author"></p>
+        </div>
+        <ul class="list-inline">
+          <li><a href="#" id="quotebutton" class="btn btn-default btn-lg get-quote"><i class="fa fa-quote-left fa-fw"></i>Get Quote</a></li>
+          <li><a href="#" id="sharebutton" class="btn btn-default btn-lg share-quote"><i class="fa fa-twitter fa-fw"></i>Share Quote</a></li>
+        </ul>
+        <h6>- built by <a href="https://github.com/deuscode" target="_blank">peter kay</a></h6>
+        <h6>- quote API by <a href="https://market.mashape.com/andruxnet/random-famous-quotes#" target="_blank">andruxnet</a></h6>
+      </div>
+    </div>
+  </div>
+  <!-- JQuery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- My Javascript -->
+  <script src="javascript.js"></script>
+
+</body>
+
 </html>
