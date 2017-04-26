@@ -24,7 +24,7 @@ $(document).ready(function () {
             },
             // API KEY
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-Mashape-Authorization", /** "PLACE API KEY HERE" **/);
+                xhr.setRequestHeader("X-Mashape-Authorization", "Z7S0yYDOubmshmZ66tDcmp73eqnAp1f7urqjsntbEmUqCqDiDE");
             }
         });
     }
