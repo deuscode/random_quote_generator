@@ -4,7 +4,7 @@ $(document).ready(function () {
     // global variable for the author
     var myauthor; 
 
-    // function to call API in JSON format
+    // function to call API in JSONP format
     function getNewQuote() {
         // ajax request
         $.ajax({ 
