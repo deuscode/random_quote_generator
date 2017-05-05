@@ -8,23 +8,23 @@ $(document).ready(function () {
     function getNewQuote() {
         // ajax request
         $.ajax({ 
-            url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=famous',
-            type: 'POST',
-            data: {},
-            dataType: 'json',
+            url: 'http://api.forismatic.com/api/1.0/',
+            dataType: 'jsonp',
+            jsonp: 'jsonp',
+            data: {
+                method: 'getQuote',
+                lang: 'en',
+                format: 'jsonp'
+            },
             success: function (data) {
-                myquote = data.quote;
-                myauthor = data.author;
+                myquote = data.quoteText;
+                myauthor = data.quoteAuthor;
                 $('#quote').text(myquote);
                 if (myauthor) {
                     $('#author').text(myauthor);
                 } else {
                     $('#author').text('Unknown');
                 }
-            },
-            // API KEY
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-Mashape-Authorization", "Z7S0yYDOubmshmZ66tDcmp73eqnAp1f7urqjsntbEmUqCqDiDE");
             }
         });
     }
